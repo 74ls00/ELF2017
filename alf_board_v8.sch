@@ -27023,6 +27023,7 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <part name="CE" library="pinhead" deviceset="PINHD-1X1" device=""/>
 <part name="ROMCE" library="jumper" deviceset="SJ" device=""/>
 <part name="IC1" library="74xx-eu" deviceset="74*00" device="N" technology="HC"/>
+<part name="D12" library="diode" deviceset="DIODE-" device="SOD80C" value="LL4148"/>
 </parts>
 <sheets>
 <sheet>
@@ -27112,7 +27113,9 @@ SOUND-IN
 <attribute name="NAME" x="260.1214" y="82.55" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="264.922" y="82.55" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="P+2" gate="1" x="261.62" y="96.52"/>
+<instance part="P+2" gate="1" x="266.7" y="93.98" smashed="yes" rot="R270">
+<attribute name="VALUE" x="269.24" y="93.98" size="1.778" layer="96"/>
+</instance>
 <instance part="GND2" gate="1" x="261.62" y="63.5"/>
 <instance part="P+3" gate="1" x="566.42" y="530.86" smashed="yes">
 <attribute name="VALUE" x="568.96" y="533.4" size="1.778" layer="96" rot="R180"/>
@@ -27258,8 +27261,8 @@ SOUND-IN
 <instance part="P+9" gate="1" x="375.92" y="408.94" rot="R270"/>
 <instance part="GND13" gate="1" x="335.28" y="408.94" rot="R270"/>
 <instance part="S1" gate="1" x="254" y="71.12" smashed="yes">
-<attribute name="NAME" x="248.92" y="90.17" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="249.555" y="85.09" size="1.778" layer="96"/>
+<attribute name="NAME" x="251.46" y="67.31" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="244.475" y="59.69" size="1.778" layer="96"/>
 </instance>
 <instance part="CN1" gate="G$1" x="665.48" y="584.2">
 <attribute name="OC_FARNELL" x="665.48" y="584.2" size="1.778" layer="96" display="off"/>
@@ -28287,6 +28290,10 @@ SOUND-IN
 <instance part="IC1" gate="B" x="299.72" y="78.74"/>
 <instance part="IC1" gate="C" x="335.28" y="78.74"/>
 <instance part="IC1" gate="D" x="373.38" y="78.74"/>
+<instance part="D12" gate="G$1" x="254" y="86.36" smashed="yes" rot="R90">
+<attribute name="NAME" x="248.92" y="88.4174" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="248.92" y="86.1314" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 <bus name="A[0..15],AR[0..7],D[0..7],DB[0..7],DR[0..7],KD[0..6],KJ[0..7],B[0..3],!ROM,!MREQ,!IORQ,!BUSRQ,!BUSAK,PBANK,!ROMC,!SSRD,!INT,!NMI,!RES,RES,!M1,!SSRD,!RD,!SSWR,!WR,!RFSH,!RAS,!CAS,!WE,!WAIT,!CE,8M,CLK,CLC2,SYNC,BR,R,G,B,CA,CB,CC,BEEPER,SR,SL,1IC8,SOUND-IN,TO,TAPE_IN,TAPE_OUT">
@@ -28484,7 +28491,12 @@ SOUND-IN
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
 <pinref part="P+2" gate="1" pin="+5V"/>
-<wire x1="261.62" y1="91.44" x2="261.62" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="264.16" y1="93.98" x2="261.62" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="261.62" y1="93.98" x2="261.62" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="261.62" y1="93.98" x2="254" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="D12" gate="G$1" pin="C"/>
+<wire x1="254" y1="93.98" x2="254" y2="88.9" width="0.1524" layer="91"/>
+<junction x="261.62" y="93.98"/>
 </segment>
 <segment>
 <pinref part="P+8" gate="1" pin="+5V"/>
@@ -29053,6 +29065,8 @@ SOUND-IN
 <pinref part="IC1" gate="A" pin="I0"/>
 <wire x1="266.7" y1="81.28" x2="264.16" y2="81.28" width="0.1524" layer="91"/>
 <junction x="264.16" y="78.74"/>
+<pinref part="D12" gate="G$1" pin="A"/>
+<wire x1="254" y1="83.82" x2="254" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="!RES" class="0">
